@@ -65,9 +65,15 @@ module.exports = function (grunt) {
     },
 	// The actual grunt server settings
 	connect: {
-		options: {
-			port: 7070,
-			base: 'test'
+		server: {
+			options: {
+				hostname: 'localhost',
+				port: '7070',
+				base: 'example/',
+				livereload: true,
+				keepalive: true,
+				open: true,
+			}
 		},
 	},
   };
@@ -76,9 +82,6 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['jshint', 'karma:unit']);
   grunt.registerTask('watch', ['jshint', 'karma:watch']);
   grunt.registerTask('build', ['jshint', 'uglify:build']);
-  grunt.registerTask('server', function () {
-      grunt.task.run(['connect']);
-  });
 
   grunt.initConfig(initConfig);
 };

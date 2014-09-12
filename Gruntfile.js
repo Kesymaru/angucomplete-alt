@@ -57,13 +57,49 @@ module.exports = function (grunt) {
           'dist/angucomplete-alt.min.js': ['angucomplete-alt.js']
         }
       }
-    }
+    },
+	// The actual grunt server settings
+	connect: {
+		options: {
+			port: 9000,
+			// Change this to '0.0.0.0' to access the server from outside.
+			hostname: 'localhost',
+			livereload: 35729
+		},
+		livereload: {
+			options: {
+				open: true,
+				base: [
+					'.tmp',
+					'<%= yeoman.app %>'
+				]
+			}
+		},
+		test: {
+			options: {
+				port: 9001,
+				base: [
+					'.tmp',
+					'test',
+					'<%= yeoman.app %>'
+				]
+			}
+		},
+		dist: {
+			options: {
+				base: '<%= yeoman.dist %>'
+			}
+		}
+	},
   };
 
   // Register tasks
   grunt.registerTask('default', ['jshint', 'karma:unit']);
   grunt.registerTask('watch', ['jshint', 'karma:watch']);
   grunt.registerTask('build', ['jshint', 'uglify:build']);
+  grunt.registerTask('server', function () {
+      grunt.task.run(['serve']);
+  });
 
   grunt.initConfig(initConfig);
 };

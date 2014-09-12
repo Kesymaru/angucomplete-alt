@@ -1,9 +1,10 @@
 {
   "name": "angucomplete-alt",
   "version": "0.0.19",
-  "homepage": "http://ghiden.github.io/angucomplete-alt/",
+  "homepage": "https://github.com/Kesymaru/angucomplete-alt",
   "authors": [
-    "Hidenari Nozaki <hidenari@gmail.com>"
+    "Hidenari Nozaki <hidenari@gmail.com>",
+    "Andrey Alfaro <andreyalfaro@gmail.com>"
   ],
   "description": "Autocomplete directive for AngularJS",
   "keywords": [

@@ -58,7 +58,8 @@ angular.module('angucomplete-alt', [] ).directive('angucompleteAlt', ['$q', '$pa
       autoMatch: '@'
     },
     templateUrl: function(tElement, attr){
-		var defaultTemplate = '<div class="angucomplete-holder">' +
+
+		/*var defaultTemplate = '<div class="angucomplete-holder">' +
 			'  <input id="{{id}}_value" ng-model="searchStr" type="text" placeholder="{{placeholder}}" class="{{inputClass}}" ng-focus="resetHideResults()" ng-blur="hideResults()" autocapitalize="off" autocorrect="off" autocomplete="off" ng-change="inputChangeHandler(searchStr)"/>' +
 			'  <div id="{{id}}_dropdown" class="angucomplete-dropdown" ng-if="showDropdown">' +
 			'    <div class="angucomplete-searching" ng-show="searching" ng-bind="textSearching"></div>' +
@@ -74,7 +75,9 @@ angular.module('angucomplete-alt', [] ).directive('angucompleteAlt', ['$q', '$pa
 			'      <div ng-if="!matchClass && result.description && result.description != \'\'" class="angucomplete-description">{{result.description}}</div>' +
 			'    </div>' +
 			'  </div>' +
-			'</div>';
+			'</div>';*/
+
+		var defaultTemplate = 'views/angucomplete-alt.html';
 		return attr.template ? attr.template : defaultTemplate;
 	},
     link: function(scope, elem, attrs, ctrl) {
